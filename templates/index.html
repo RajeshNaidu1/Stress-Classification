@@ -1,0 +1,52 @@
+<html>
+    <head>
+        <title>IoT Project</title>
+        <link rel="stylesheet" href="/static/styles.css">
+    </head>
+    <body>
+        <div class="heading">
+            <h1>Stress Detection</h1>
+            <h3>Enter the values that you got from the IoT system </h3>
+        </div>
+        <form action='predict' method='POST'>
+            <div class="container">
+                <div class="container1">
+                    <h4>BVP_mean: <input type="text" name="BVP_mean"><br></h4>
+                    <h4>BVP_std: <input type="text" name="BVP_std"><br></h4>
+                    <h4>EDA_phasic_mean: <input type="text" name="EDA_phasic_mean"><br></h4>
+                    <h4>EDA_phasic_min: <input type="text" name="EDA_phasic_min"><br></h4>
+                    <h4>EDA_smna_min: <input type="text" name="EDA_smna_min"><br></h4>
+                </div>
+                <div class="container2">
+                    <h4>EDA_tonic_mean: <input type="text" name="EDA_tonic_mean"><br></h4>
+                    <h4>Resp_mean: <input type="text" name="Resp_mean"><br></h4>
+                    <h4>Resp_std: <input type="text" name="Resp_std"><br></h4>
+                    <h4>TEMP_mean: <input type="text" name="TEMP_mean"><br></h4>
+                    <h4>TEMP_std: <input type="text" name="TEMP_std"><br></h4>
+                </div>
+                <div class="container3">
+                    <h4>TEMP_slope: <input type="text" name="TEMP_slope"><br></h4>
+                    <h4>BVP_peak_freq: <input type="text" name="BVP_peak_freq"><br></h4>
+                    <h4>Age: <input type="text" name="age"><br></h4>
+                    <h4>Height: <input type="text" name="height"><br></h4>
+                    <h4>Weight: <input type="text" name="weight"><br></h4>
+                </div>
+            </div>
+            <div class="downPage">
+                <div class="result" id="result1">Class:{{result}}</div>
+                <input class="button-1" id="result2" type="submit" value="Predict">
+            </div>
+            <div class="emojis">
+                <h2>0 : 😄 - Amused</h2>
+                <h2>1 : 🙂 - Neutral</h2>
+                <h2>2 : 😕 - Stressed</h2>
+            </div>
+    <script>
+        let var2 = document.getElementById('result2')
+        let var1 = document.getElementById('result1').innerHTML
+        var2.addEventListener('click', ()=>{
+            console.log(var1)
+        })
+    </script>
+    </body>
+</html>
